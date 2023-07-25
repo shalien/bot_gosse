@@ -38,10 +38,10 @@ packages:
     description:
       path: "."
       ref: HEAD
-      resolved-ref: "4787ef50617b1e5d9c67564f7f5be2aba410af1b"
+      resolved-ref: "25ba1e227534b8a30a3ddb8d6a58673dd82d4b71"
       url: "https://github.com/shalien/bel_adn.git"
     source: git
-    version: "2.0.13"
+    version: "2.0.29"
   boolean_selector:
     dependency: transitive
     description:

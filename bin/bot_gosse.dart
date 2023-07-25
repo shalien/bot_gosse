@@ -1,5 +1,7 @@
-import 'package:bot_gosse/bot_gosse.dart' as bot_gosse;
+import 'package:bot_gosse/src/scheduler.dart';
 
-void main(List<String> arguments) {
-  print('Hello world: ${bot_gosse.calculate()}!');
+void main(List<String> arguments) async {
+  final Scheduler scheduler = Scheduler();
+
+  await scheduler.start();
 }
