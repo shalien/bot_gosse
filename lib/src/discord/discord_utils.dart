@@ -11,13 +11,17 @@ Future<Set<AttachmentBuilder>> getAttachmentsFromTopic(Topic topic) async {
 
   List<Provider> shuffledProviders = providers.toList()..shuffle();
 
-  List<Provider> subProviders =
-      shuffledProviders.sublist(1, Random.secure().nextInt(providers.length));
+  if (shuffledProviders.isEmpty) return attachments;
+
+  List<Provider> subProviders = shuffledProviders.sublist(
+      0, Random.secure().nextInt(providers.length).clamp(1, providers.length));
 
   for (Provider provider in subProviders) {
     Set<Source> sources = await provider.sources;
 
     List<Source> shuffledSources = sources.toList()..shuffle();
+
+    if (shuffledSources.isEmpty) return attachments;
 
     List<Source> subSources = shuffledSources.take(10).toList();
 
